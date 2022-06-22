@@ -1,3 +1,6 @@
+package JavaStart;
+
+
 import java.io.*;
 
 public class WorkingWithFiles {

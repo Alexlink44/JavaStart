@@ -1,3 +1,6 @@
+package JavaStart;
+
+
 public class Task01 {
     public static void task() throws Exception {
         int[] data = WorkingWithFiles.Input();
