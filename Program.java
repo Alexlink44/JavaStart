@@ -1,8 +1,15 @@
-
+import java.util.Scanner;
 public class Program {
     public static void main(String[] args) throws Exception {
-        int triangleTNum = Task02.InputData();
-        int triangleNumber = Task02.TriangularNumberCalculation(triangleTNum);
-        System.out.println(triangleNumber);
+        
+        Scanner in = new Scanner(System.in);
+        System.out.print("Введите число дисков: ");
+        int value = in.nextInt();
+        in.close();
+
+        
+        int [] array = WorkingWithArrays.Fill_1_Sprire(value);
+        HanoiTowers.CyclicSolution(value, array);
+        
     }
 }
