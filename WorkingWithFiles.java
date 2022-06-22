@@ -1,4 +1,3 @@
-package JavaStart;
 
 
 import java.io.*;
