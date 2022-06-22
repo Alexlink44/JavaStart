@@ -4,7 +4,7 @@ public class Program {
         
         Scanner in = new Scanner(System.in);
         System.out.print("Введите число дисков: ");
-        var value = in.nextInt();
+        int value = in.nextInt();
         in.close();
 
         
