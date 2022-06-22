@@ -16,10 +16,14 @@ public class WorkingWithArrays {
         array[numberT] = numberT + 1;
         return array;
     }
-    public static void PrintArray(int array[], int array2[], int array3[]) {
+    public static void PrintArray(int array[], int array2[], int array3[], int value) {
         for (int i = 0; i < array.length; i++) {
-            System.out.printf("%d %d %d \n", array[i], array2[i], array3[i]);
-
+            if(array[i] == value) {System.out.print("T ");}
+            else System.out.printf("%d ", array[i]);
+            if(array2[i] == value) {System.out.print("T ");}
+            else System.out.printf("%d ", array2[i]);
+            if(array3[i] == value) {System.out.print("T\n");}
+            else System.out.printf("%d\n", array3[i]);
         }
     }
 }

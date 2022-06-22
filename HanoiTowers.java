@@ -7,7 +7,7 @@ public class HanoiTowers {
         int[] spire2 = WorkingWithArrays.AnySpires(value);
         int[] spire3 = WorkingWithArrays.AnySpires(value); 
         
-        WorkingWithArrays.PrintArray(spire1, spire2, spire3);
+        WorkingWithArrays.PrintArray(spire1, spire2, spire3, value + 1);
         if(value%2 == 0){
             Discs.Even(pos1, pos2, pos3, spire1, spire2, spire3, value);
         }

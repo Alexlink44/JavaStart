@@ -54,7 +54,7 @@ public class Discs {
                 }   
                     break;                
             }
-            WorkingWithArrays.PrintArray(spire1, spire2, spire3);
+            WorkingWithArrays.PrintArray(spire1, spire2, spire3, value + 1);
         }
     }
     public static void NotEven(int pos1, int pos2, int pos3, int[] spire1, int[] spire2, int[] spire3, int value) {
@@ -114,7 +114,7 @@ public class Discs {
 
 
             }
-            WorkingWithArrays.PrintArray(spire1, spire2, spire3);
+            WorkingWithArrays.PrintArray(spire1, spire2, spire3, value + 1);
         }
     }
 }

@@ -1,7 +1,13 @@
+import java.util.Scanner;
 public class Program {
     public static void main(String[] args) throws Exception {
         
-        int value = 5;
+        Scanner in = new Scanner(System.in);
+        System.out.print("Введите число дисков: ");
+        var value = in.nextInt();
+        in.close();
+
+        
         int [] array = WorkingWithArrays.Fill_1_Sprire(value);
         HanoiTowers.CyclicSolution(value, array);
         
