@@ -1,18 +1,36 @@
-// +Реализовать функцию возведения числа а в степень b. a, b ∈ Z. Сводя количество выполняемых действий к минимуму. 
-// Пример 1: а = 3, b = 2, ответ: 9 
-// Пример 2: а = 2, b = -2, ответ: 0.25
-// Пример 3: а = 3, b = 0, ответ: 1
-// Пример 4: а = 0, b = 0, ответ: не определено
-// Пример 5
-// входные данные находятся в файле input.txt в виде
-// b 3
-// a 10
-// Результат нужно сохранить в файле output.txt
-// 1000
-
+import java.util.Scanner;
 
 public class program {
     public static void main(String[] args) throws Exception {
-        Task01.task();
+        System.out.println("Добро пожаловать в калькулятор рациональных и комплексных чисел.");
+        Scanner in = new Scanner(System.in);
+        System.out.print("Введите первое число (с мнимой частью или без неё)");
+        String value1 = in.nextLine();
+        System.out.print("Введите второе число (с мнимой частью или без неё)");
+        String value2 = in.nextLine();
+        System.out.println("Введите арифметическую операцию");
+        System.out.println("Сложение `+`, вычитаение `-`, умножение `*`, деление `/`");
+        String value3 = in.nextLine();
+        in.close();
+        double[] number1 = Parsere.ParsNum(value1);
+        double a = number1[0];
+        double bi = number1[1];
+        double[] number2 = Parsere.ParsNum(value2);
+        double c = number2[0];
+        double di = number2[1];
+        switch(value3){
+            case "+":
+            System.out.println(Calculation.Addition(a, c, bi, di));
+                break;
+            case "-":
+            System.out.println(Calculation.Subtraction(a, c, bi, di));
+                break;
+            case "*":
+            System.out.println(Calculation.Multiplication(a, c, bi, di));
+                break;
+            case "/":
+            System.out.println(Calculation.Division(a, c, bi, di));
+                break;
+        }
     }
 }
