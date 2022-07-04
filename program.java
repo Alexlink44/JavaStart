@@ -18,19 +18,29 @@ public class program {
         double[] number2 = Parsere.ParsNum(value2);
         double c = number2[0];
         double di = number2[1];
+        String endResult = "";
         switch(value3){
             case "+":
-            System.out.println(Calculation.Addition(a, c, bi, di));
+            endResult = Calculation.Addition(a, c, bi, di);
+            endResult = endResult.replace(".0", "");
+            System.out.println(endResult);
+            
                 break;
             case "-":
-            System.out.println(Calculation.Subtraction(a, c, bi, di));
-                break;
+                endResult = Calculation.Subtraction(a, c, bi, di);
+                endResult = endResult.replace(".0", "");
+                System.out.println(endResult);
+                    break;
             case "*":
-            System.out.println(Calculation.Multiplication(a, c, bi, di));
-                break;
+                endResult = Calculation.Multiplication(a, c, bi, di);
+                endResult = endResult.replace(".0", "");
+                System.out.println(endResult);
+                    break;
             case "/":
-            System.out.println(Calculation.Division(a, c, bi, di));
-                break;
+                endResult = Calculation.Division(a, c, bi, di);
+                endResult = endResult.replace(".0", "");
+                System.out.println(endResult);
+                    break;
         }
     }
 }
