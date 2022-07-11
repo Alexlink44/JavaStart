@@ -30,9 +30,22 @@ public class Program {
                 posQ[workPosition]++;
             }
         }
-
-            for (int i = 0; i < posQ.length; i++) {
-                System.out.println(posQ[i]);
+        // for (int i = 0; i < posQ.length; i++) {
+        //     System.out.println(posQ[i]);
+        // }
+        String F [][] = new String[8][8];
+        for (int i = 0; i < F.length; i++) {
+            for (int j = 0; j < F.length; j++) {
+                F[i][j] = "X";
+        }
+        }
+        for (int i = 0; i < F.length; i++) {
+            System.out.println("\n");
+            for (int j = 0; j < F.length; j++) {
+                if(posQ[j] == i) {System.out.print("Q  ");}
+                else {System.out.printf("%s  ", F[i][j]);}
             }
+        }
+
     }
 }
