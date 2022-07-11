@@ -19,10 +19,20 @@ public class Queens {
             for (int j = 0; j < field.length; j++) {
                 field[posQ[numQ]][j] = 1;
             }
-            int i = 0;
-            int j = 0;
-            while (i > 0 & j > 0) {
-                
+            int i = numQ - 1;
+            int j = posQ[numQ];
+            int t = 1;
+            while (i > 0 & j > t & j + t < 8) {
+                field[i][j - t] = 1;
+                field[i][j + t] = 1;
+                t++;
+                i--;
+            }
+            while (i < 8 & j > t & j + t < 8) {
+                field[i][j - t] = 1;
+                field[i][j + t] = 1;
+                t++;
+                i++;
             }
         }
         return field;
