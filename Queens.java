@@ -22,14 +22,31 @@ public class Queens {
             int i = numQ - 1;
             int j = posQ[numQ];
             int t = 1;
-            while (i > 0 & j > t & j + t < 8) {
+            while (i > 0 & j > t) {
                 field[i][j - t] = 1;
+                t++;
+                i--;
+            }
+            i = numQ - 1;
+            j = posQ[numQ];
+            t = 1;
+            while (i > 0 & j + t < 8) {
                 field[i][j + t] = 1;
                 t++;
                 i--;
             }
-            while (i < 8 & j > t & j + t < 8) {
+            i = numQ + 1;
+            j = posQ[numQ];
+            t = 1;
+            while (i < 8 & j > t) {
                 field[i][j - t] = 1;
+                t++;
+                i++;
+            }
+            i = numQ + 1;
+            j = posQ[numQ];
+            t = 1;
+            while (i < 8 & j + t < 8) {
                 field[i][j + t] = 1;
                 t++;
                 i++;
