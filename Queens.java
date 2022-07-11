@@ -14,6 +14,9 @@ public class Queens {
 
 
 
+    public Queens() {
+    }
+
     public static int[][] PositionQueens(int[][] field, int[] posQ, int numQ) {
             for (int i = 0; i < field.length; i++) {
                 field[i][numQ] = 1;
@@ -21,36 +24,32 @@ public class Queens {
             for (int j = 0; j < field.length; j++) {
                 field[posQ[numQ]][j] = 1;
             }
-            int i = numQ - 1;
-            int j = posQ[numQ];
-            int t = 1;
-            while (i > 0 & j > t) {
-                field[i][j - t] = 1;
-                t++;
+            int i = posQ[numQ] - 1;
+            int j = numQ - 1;
+            while (i >= 0 & j >= 0) {
+                field[i][j] = 1;
                 i--;
+                j--;
             }
-            i = numQ - 1;
-            j = posQ[numQ];
-            t = 1;
-            while (i > 0 & j + t < 8) {
-                field[i][j + t] = 1;
-                t++;
-                i--;
-            }
-            i = numQ + 1;
-            j = posQ[numQ];
-            t = 1;
-            while (i < 8 & j > t) {
-                field[i][j - t] = 1;
-                t++;
+            i = posQ[numQ] + 1;
+            j = numQ - 1;
+            while (i < 8 & j > 0) {
+                field[i][j] = 1;
+                j--;
                 i++;
             }
-            i = numQ + 1;
-            j = posQ[numQ];
-            t = 1;
-            while (i < 8 & j + t < 8) {
-                field[i][j + t] = 1;
-                t++;
+            i = posQ[numQ] - 1;
+            j = numQ + 1;
+            while (i >= 0 & j < 8) {
+                field[i][j] = 1;
+                j++;
+                i--;
+            }
+            i = posQ[numQ] + 1;
+            j = numQ + 1;
+            while (i < 8 & j < 8) {
+                field[i][j] = 1;
+                j++;
                 i++;
             }
        return field;
