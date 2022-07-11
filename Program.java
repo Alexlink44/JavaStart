@@ -7,7 +7,7 @@ public class Program {
 
         while (workPosition < 8) {
             field = Queens.CleanField();
-            for (int i = workPosition; i < 8; i++) {
+            for (int i = workPosition + 1; i < 8; i++) {
                 posQ[i] = 0;
             }
             for (int i = 0; i < workPosition; i++) {
@@ -17,9 +17,10 @@ public class Program {
             while(field[posQ[numQ]][numQ] != 0){
                 posQ[numQ]++;
             }
-            do {
+            while (!Queens.CheckPositions(Queens.PositionQueens(field, posQ, numQ), numQ) & posQ[numQ] < 8){
                 posQ[numQ]++;
-            } while (!Queens.CheckPositions(Queens.PositionQueens(field, posQ, numQ), numQ) & posQ[numQ] < 8);
+            }
+
             if (posQ[numQ] != 8){
                 field = Queens.PositionQueens(field, posQ, numQ);
                 workPosition++;
@@ -29,7 +30,9 @@ public class Program {
                 posQ[workPosition]++;
             }
         }
-            Queens.PrintField(field);
+            for (int i = 0; i < posQ.length; i++) {
+                System.out.println(posQ[i]);
+            }
 
     }
 }
