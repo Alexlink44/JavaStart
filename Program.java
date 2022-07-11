@@ -5,12 +5,12 @@ public class Program {
         int numQ = 0;
         int workPosition = 0;
 
-        while (workPosition < 7) {
+        while (workPosition < 8) {
             field = Queens.CleanField();
             for (int i = workPosition + 1; i < 8; i++) {
                 posQ[i] = 0;
             }
-            for (int i = 0; i <= workPosition; i++) {
+            for (int i = 0; i < workPosition; i++) {
                 field = Queens.PositionQueens(field, posQ, i);
                 numQ = i + 1;
             }
