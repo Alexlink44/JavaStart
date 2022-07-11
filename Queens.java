@@ -1,5 +1,5 @@
 public class Queens {
-    public static int[][] ChessField() {
+    public static int[][] CleanField() {
         int[][] field = new int[8][8];
         for (int i = 0; i < 8; i++) {
             for (int j = 0; j < 8; j++) {
@@ -11,8 +11,10 @@ public class Queens {
         return field;
     }
 
+
+
+
     public static int[][] PositionQueens(int[][] field, int[] posQ, int numQ) {
-        if (field[numQ][posQ[numQ]] == 0) {
             for (int i = 0; i < field.length; i++) {
                 field[i][numQ] = 1;
             }
@@ -51,8 +53,7 @@ public class Queens {
                 t++;
                 i++;
             }
-        }
-        return field;
+       return field;
     }
 
     public static boolean CheckPositions(int[][] field, int numQ) {
@@ -76,4 +77,5 @@ public class Queens {
             System.out.println("\n\n");
         }
     }
+    
 }
