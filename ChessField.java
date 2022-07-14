@@ -17,19 +17,20 @@ public class ChessField {
 
                 int indexI = ChessField.Offset(i, turn[position], n, 2);
                 int indexJ = ChessField.Offset(j, turn[position], n, 0);
-                flag = true;
+                turn[position]++;
+                if(indexI != -1 & indexJ != -1){
+                    if(field[indexI][indexJ] == 0) flag = true;}
                 while (indexI == -1 | indexJ == -1 | flag == false) {
                     indexI = ChessField.Offset(i, turn[position], n, 2);
                     indexJ = ChessField.Offset(j, turn[position], n, 0);
-                    turn[position]++;
-                    if(turn[position] == 8) break;
                     if(indexI != -1 & indexJ != -1){
                         if(field[indexI][indexJ] == 0) flag = true;
                     }
-                
+                    turn[position]++;
+                    if(turn[position] > 8) break;
                 }
                 flag = false;
-                if (turn[position] == 8) {
+                if (turn[position] > 8) {
                     field[i][j] = 0;
                     turn[position] = 0;
                     position--;
