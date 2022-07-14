@@ -1,13 +1,13 @@
 public class ChessField {
     public static int[][] Field(int[][] field, int[] turn, int position, int n) {
-       while (position < n) {
+       while (position < n*n) {
             boolean flag = false;
             while (!flag) {
                 int i = 0;
                 int j = 0;
                 while(field[i][j] != position){
                     j = 0;
-                    while(j < turn.length - 1 & field[i][j] != position ){
+                    while(j < n - 1 & field[i][j] != position ){
                         if(field[i][j] == position) break;
                         j++;
                     }
@@ -15,15 +15,20 @@ public class ChessField {
                     i++;
                 }
 
-                int indexI = 0;
-                int indexJ = 0;
-                while (turn[position] < 8 & field[indexI][indexJ] != 0) {
-                    while (turn[position] < 8 & indexI == -1 | indexJ == -1) {
-                        indexI = ChessField.Offset(i, turn[position], n, 2);
-                        indexJ = ChessField.Offset(i, turn[position], n, 0);
-                        turn[position]++;
+                int indexI = ChessField.Offset(i, turn[position], n, 2);
+                int indexJ = ChessField.Offset(j, turn[position], n, 0);
+                flag = true;
+                while (indexI == -1 | indexJ == -1 | flag == false) {
+                    indexI = ChessField.Offset(i, turn[position], n, 2);
+                    indexJ = ChessField.Offset(j, turn[position], n, 0);
+                    turn[position]++;
+                    if(turn[position] == 8) break;
+                    if(indexI != -1 & indexJ != -1){
+                        if(field[indexI][indexJ] == 0) flag = true;
                     }
+                
                 }
+                flag = false;
                 if (turn[position] == 8) {
                     field[i][j] = 0;
                     turn[position] = 0;
@@ -59,8 +64,8 @@ public class ChessField {
                 j = j * (-1);
             }
         }
-        if (index < 0 | index > n) {
-            index = -1;
+        if (result < 0 | result >= n) {
+            result = -1;
         }
         return result;
     }

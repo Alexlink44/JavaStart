@@ -2,7 +2,7 @@ public class Program {
     public static void main(String[] args) throws Exception {
         int n = 5;
         int position = 1;
-        int[] turn = new int [n];
+        int[] turn = new int [n*n];
         int[][] field = new int[n][n];
 
         field[4][4] = 1;
