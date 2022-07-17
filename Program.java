@@ -1,8 +1,21 @@
+// На вход некоторому исполнителю подаётся два числа (a, b). У исполнителя есть две команды
+// - команда 1 (к1): увеличить в с раза, а умножается на c
+// - команда 2 (к2): увеличить на d ( +2 ), к a прибавляется d
+// написать программу, которая выдаёт набор команд, позволяющий число a превратить в число b или сообщить, что это невозможно
+// Пример 1: а = 1, b = 7, c = 2, d = 1
+// ответ: к2, к2, к2, к2, к2, к2 или к2, к1, к2, к2, к2 или к2, к2, к1, к2. 
+// Пример 2: а = 11, b = 7, c = 2, d = 1
+// ответ: нет решения. 
+// *Подумать над тем, как сделать минимальное количество команд
 
 public class Program {
     public static void main(String[] args) throws Exception {
-        int triangleTNum = Task02.InputData();
-        int triangleNumber = Task02.TriangularNumberCalculation(triangleTNum);
-        System.out.println(triangleNumber);
+        int a = 3;
+        int b = 63;
+        int c = 3;
+        int d = 2;
+        System.out.println(Calculation.Сalculation(a, b, c, d));
+
     }
-}
+
+}   
